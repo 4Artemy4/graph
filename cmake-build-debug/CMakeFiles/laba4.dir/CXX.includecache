@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/art/University/PPvIS/laba4/Graph.cpp
+Graph.h
+/home/art/University/PPvIS/laba4/Graph.h
+
+/home/art/University/PPvIS/laba4/Graph.h
+vector
+-
+iostream
+-
+
+/home/art/University/PPvIS/laba4/main.cpp
+iostream
+-
+vector
+-
+Graph.h
+/home/art/University/PPvIS/laba4/Graph.h
+
