@@ -8,12 +8,22 @@
 #include <vector>
 #include <iostream>
 
-template<typename T>
+template<typename Types>
+struct tr {
+public:
+    typedef size_t weightType;
+    typedef Types arg_type;
+    typedef Types &reference;
+    typedef Types *pointer;
+    typedef const Types &const_reference;
+};
+
+template<typename T, typename traits = tr<T>>
 class Graph {
 private:
 
     std::vector<T> vertex;
-    std::vector<std::vector<size_t>> matrix;
+    std::vector<std::vector<typename tr<T>::weightType>> matrix;
 
     class VertexIterator : public std::iterator<std::input_iterator_tag, T> {
 
@@ -21,10 +31,16 @@ private:
         friend class Graph<T>;
 
         std::vector<T> *currentNode;
+        const std::vector<T> *constCurrentNode;
         size_t index = 0;
 
         VertexIterator(std::vector<T> &node, size_t ind) {
             currentNode = &node;
+            index = ind;
+        }
+
+        VertexIterator(const std::vector<T> &node, size_t ind) {
+            constCurrentNode = &node;
             index = ind;
         }
 
@@ -37,12 +53,20 @@ private:
             return index == other.index;
         }
 
-        T &operator*() const {
+        typename tr<T>::reference operator*() {
             return currentNode->operator[](index);
         }
 
-        T *operator->() const {
+        typename tr<T>::pointer operator->() {
             return currentNode->operator[](index);
+        }
+
+        typename tr<T>::arg_type operator*() const {
+            return *constCurrentNode->operator[](index);
+        }
+
+        typename tr<T>::pointer operator->() const {
+            return constCurrentNode->operator[](index);
         }
 
         virtual VertexIterator &operator++() {
@@ -61,21 +85,22 @@ private:
         friend class Graph<T>;
 
         struct Triple {
-            size_t weight;
+            typename tr<T>::weightType *weight;
             VertexIterator *first;
             VertexIterator *second;
 
-            constexpr Triple(VertexIterator &first, VertexIterator &second, const size_t weight) : first(&first),
-                                                                                                   second(&second),
-                                                                                                   weight(weight) {};
+            constexpr Triple(VertexIterator &first, VertexIterator &second, const typename tr<T>::weightType weight)
+                    : first(&first),
+                      second(&second),
+                      weight(&weight) {};
         };
 
         VertexIterator *firstIndex;
         VertexIterator *secondIndex;
-        std::vector<std::vector<size_t>> *matrix;
+        std::vector<std::vector<typename tr<T>::weightType>> *matrix;
         std::vector<T> *vertex;
 
-        EdgesIterator(size_t index1, size_t index2, std::vector<std::vector<size_t>> &matrix, std::vector<T> &vertex) {
+        EdgesIterator(size_t index1, size_t index2, std::vector<std::vector<typename tr<T>::weightType>> &matrix, std::vector<T> &vertex) {
             this->matrix = &matrix;
             this->vertex = &vertex;
             firstIndex = new VertexIterator(*this->vertex, index1);
@@ -237,9 +262,9 @@ public:
 
     vertexIterator endV() { return vertexIterator(vertex, vertex.size() - 1); }
 
-    constVertexIterator сbeginV() const { return vertexIterator(vertex, 0); }
+    constVertexIterator cbeginV() const { return constVertexIterator(vertex, 0); }
 
-    constVertexIterator сendV() const { return vertexIterator(vertex, vertex.size() - 1); };
+    constVertexIterator cendV() const { return constVertexIterator(vertex, vertex.size() - 1); };
 
     reverseVertexIterator rBeginV() { reverseVertexIterator(vertex, 0); }
 
@@ -249,13 +274,13 @@ public:
 
     edgesIterator endE() { return edgesIterator(vertex.size() - 1, vertex.size() - 1, matrix, vertex); }
 
-    constEdgesIterator сbeginE() const { return edgesIterator(0, 0); }
+    constEdgesIterator cbeginE() const { return edgesIterator(0, 0); }
 
-    constEdgesIterator сendE() const { return edgesIterator(vertex.size(), vertex.size() - 1); };
+    constEdgesIterator cendE() const { return edgesIterator(vertex.size(), vertex.size() - 1); };
 
-    reverseEdgesIterator rbeginE(){ return reverseEdgesIterator(0, 0, matrix, vertex);};
+    reverseEdgesIterator rbeginE() { return reverseEdgesIterator(0, 0, matrix, vertex); };
 
-    reverseEdgesIterator rendE(){return reverseEdgesIterator(vertex.size() - 1, vertex.size() - 1, matrix, vertex);};
+    reverseEdgesIterator rendE() { return reverseEdgesIterator(vertex.size() - 1, vertex.size() - 1, matrix, vertex); };
 
 };
 

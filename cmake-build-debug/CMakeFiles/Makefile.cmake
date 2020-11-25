@@ -7,21 +7,32 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCInformation.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCXXInformation.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCommonLanguageInclude.cmake"
+  "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CMakeDependentOption.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CMakeFindCodeBlocks.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CMakeGenericSystem.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CMakeInitializeConfigs.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CMakeLanguageInformation.cmake"
+  "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CMakePackageConfigHelpers.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CMakeSystemSpecificInformation.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CheckCSourceCompiles.cmake"
+  "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CheckIncludeFile.cmake"
+  "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/CheckLibraryExists.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/Compiler/GNU-C.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/Compiler/GNU-CXX.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/Compiler/GNU.cmake"
+  "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/FindPackageHandleStandardArgs.cmake"
+  "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/FindPackageMessage.cmake"
+  "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/FindPythonInterp.cmake"
+  "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/FindThreads.cmake"
+  "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/GNUInstallDirs.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/Internal/CMakeCheckCompilerFlag.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/Platform/Linux-GNU-C.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/Platform/Linux-GNU-CXX.cmake"
@@ -29,10 +40,20 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/Platform/Linux.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/Platform/UnixPaths.cmake"
   "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/ProcessorCount.cmake"
+  "/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/share/cmake-3.17/Modules/WriteBasicConfigVersionFile.cmake"
   "../CMakeLists.txt"
   "CMakeFiles/3.17.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.17.3/CMakeSystem.cmake"
+  "../test/googletest/CMakeLists.txt"
+  "../test/googletest/googlemock/CMakeLists.txt"
+  "../test/googletest/googlemock/cmake/gmock.pc.in"
+  "../test/googletest/googlemock/cmake/gmock_main.pc.in"
+  "../test/googletest/googletest/CMakeLists.txt"
+  "../test/googletest/googletest/cmake/Config.cmake.in"
+  "../test/googletest/googletest/cmake/gtest.pc.in"
+  "../test/googletest/googletest/cmake/gtest_main.pc.in"
+  "../test/googletest/googletest/cmake/internal_utils.cmake"
   )
 
 # The corresponding makefile is:
@@ -44,9 +65,16 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "test/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "test/googletest/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "test/googletest/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/laba4.dir/DependInfo.cmake"
+  "test/googletest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
+  "test/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
+  "test/googletest/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "test/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )

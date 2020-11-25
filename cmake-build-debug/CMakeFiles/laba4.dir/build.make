@@ -90,22 +90,9 @@ CMakeFiles/laba4.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/laba4.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/art/University/PPvIS/laba4/main.cpp -o CMakeFiles/laba4.dir/main.cpp.s
 
-CMakeFiles/laba4.dir/Graph.cpp.o: CMakeFiles/laba4.dir/flags.make
-CMakeFiles/laba4.dir/Graph.cpp.o: ../Graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/laba4.dir/Graph.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/laba4.dir/Graph.cpp.o -c /home/art/University/PPvIS/laba4/Graph.cpp
-
-CMakeFiles/laba4.dir/Graph.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/laba4.dir/Graph.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/art/University/PPvIS/laba4/Graph.cpp > CMakeFiles/laba4.dir/Graph.cpp.i
-
-CMakeFiles/laba4.dir/Graph.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/laba4.dir/Graph.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/art/University/PPvIS/laba4/Graph.cpp -o CMakeFiles/laba4.dir/Graph.cpp.s
-
 CMakeFiles/laba4.dir/test.cpp.o: CMakeFiles/laba4.dir/flags.make
 CMakeFiles/laba4.dir/test.cpp.o: ../test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/laba4.dir/test.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/laba4.dir/test.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/laba4.dir/test.cpp.o -c /home/art/University/PPvIS/laba4/test.cpp
 
 CMakeFiles/laba4.dir/test.cpp.i: cmake_force
@@ -118,7 +105,7 @@ CMakeFiles/laba4.dir/test.cpp.s: cmake_force
 
 CMakeFiles/laba4.dir/GUI/MainWindow.cpp.o: CMakeFiles/laba4.dir/flags.make
 CMakeFiles/laba4.dir/GUI/MainWindow.cpp.o: ../GUI/MainWindow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/laba4.dir/GUI/MainWindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/laba4.dir/GUI/MainWindow.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/laba4.dir/GUI/MainWindow.cpp.o -c /home/art/University/PPvIS/laba4/GUI/MainWindow.cpp
 
 CMakeFiles/laba4.dir/GUI/MainWindow.cpp.i: cmake_force
@@ -129,21 +116,37 @@ CMakeFiles/laba4.dir/GUI/MainWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/laba4.dir/GUI/MainWindow.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/art/University/PPvIS/laba4/GUI/MainWindow.cpp -o CMakeFiles/laba4.dir/GUI/MainWindow.cpp.s
 
+CMakeFiles/laba4.dir/test/allTests.cpp.o: CMakeFiles/laba4.dir/flags.make
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/allTests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/laba4.dir/test/allTests.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/laba4.dir/test/allTests.cpp.o -c /home/art/University/PPvIS/laba4/test/allTests.cpp
+
+CMakeFiles/laba4.dir/test/allTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/laba4.dir/test/allTests.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/art/University/PPvIS/laba4/test/allTests.cpp > CMakeFiles/laba4.dir/test/allTests.cpp.i
+
+CMakeFiles/laba4.dir/test/allTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/laba4.dir/test/allTests.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/art/University/PPvIS/laba4/test/allTests.cpp -o CMakeFiles/laba4.dir/test/allTests.cpp.s
+
 # Object files for target laba4
 laba4_OBJECTS = \
 "CMakeFiles/laba4.dir/main.cpp.o" \
-"CMakeFiles/laba4.dir/Graph.cpp.o" \
 "CMakeFiles/laba4.dir/test.cpp.o" \
-"CMakeFiles/laba4.dir/GUI/MainWindow.cpp.o"
+"CMakeFiles/laba4.dir/GUI/MainWindow.cpp.o" \
+"CMakeFiles/laba4.dir/test/allTests.cpp.o"
 
 # External object files for target laba4
 laba4_EXTERNAL_OBJECTS =
 
 laba4: CMakeFiles/laba4.dir/main.cpp.o
-laba4: CMakeFiles/laba4.dir/Graph.cpp.o
 laba4: CMakeFiles/laba4.dir/test.cpp.o
 laba4: CMakeFiles/laba4.dir/GUI/MainWindow.cpp.o
+laba4: CMakeFiles/laba4.dir/test/allTests.cpp.o
 laba4: CMakeFiles/laba4.dir/build.make
+laba4: lib/libgtestd.a
+laba4: lib/libgtest_maind.a
+laba4: lib/libgtestd.a
 laba4: CMakeFiles/laba4.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable laba4"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/laba4.dir/link.txt --verbose=$(VERBOSE)

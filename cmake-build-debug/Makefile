@@ -76,16 +76,29 @@ CMAKE_BINARY_DIR = /home/art/University/PPvIS/laba4/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
-.PHONY : edit_cache/fast
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -97,6 +110,39 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -143,6 +189,58 @@ laba4/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/laba4.dir/build.make CMakeFiles/laba4.dir/build
 .PHONY : laba4/fast
 
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f test/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make test/googletest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f test/googletest/googlemock/CMakeFiles/gmock.dir/build.make test/googletest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f test/googletest/googletest/CMakeFiles/gtest_main.dir/build.make test/googletest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f test/googletest/googletest/CMakeFiles/gtest.dir/build.make test/googletest/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
 GUI/MainWindow.o: GUI/MainWindow.cpp.o
 
 .PHONY : GUI/MainWindow.o
@@ -169,33 +267,6 @@ GUI/MainWindow.s: GUI/MainWindow.cpp.s
 GUI/MainWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/laba4.dir/build.make CMakeFiles/laba4.dir/GUI/MainWindow.cpp.s
 .PHONY : GUI/MainWindow.cpp.s
-
-Graph.o: Graph.cpp.o
-
-.PHONY : Graph.o
-
-# target to build an object file
-Graph.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/laba4.dir/build.make CMakeFiles/laba4.dir/Graph.cpp.o
-.PHONY : Graph.cpp.o
-
-Graph.i: Graph.cpp.i
-
-.PHONY : Graph.i
-
-# target to preprocess a source file
-Graph.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/laba4.dir/build.make CMakeFiles/laba4.dir/Graph.cpp.i
-.PHONY : Graph.cpp.i
-
-Graph.s: Graph.cpp.s
-
-.PHONY : Graph.s
-
-# target to generate assembly for a file
-Graph.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/laba4.dir/build.make CMakeFiles/laba4.dir/Graph.cpp.s
-.PHONY : Graph.cpp.s
 
 main.o: main.cpp.o
 
@@ -251,6 +322,33 @@ test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/laba4.dir/build.make CMakeFiles/laba4.dir/test.cpp.s
 .PHONY : test.cpp.s
 
+test/allTests.o: test/allTests.cpp.o
+
+.PHONY : test/allTests.o
+
+# target to build an object file
+test/allTests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/laba4.dir/build.make CMakeFiles/laba4.dir/test/allTests.cpp.o
+.PHONY : test/allTests.cpp.o
+
+test/allTests.i: test/allTests.cpp.i
+
+.PHONY : test/allTests.i
+
+# target to preprocess a source file
+test/allTests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/laba4.dir/build.make CMakeFiles/laba4.dir/test/allTests.cpp.i
+.PHONY : test/allTests.cpp.i
+
+test/allTests.s: test/allTests.cpp.s
+
+.PHONY : test/allTests.s
+
+# target to generate assembly for a file
+test/allTests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/laba4.dir/build.make CMakeFiles/laba4.dir/test/allTests.cpp.s
+.PHONY : test/allTests.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -258,20 +356,28 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
 	@echo "... laba4"
 	@echo "... GUI/MainWindow.o"
 	@echo "... GUI/MainWindow.i"
 	@echo "... GUI/MainWindow.s"
-	@echo "... Graph.o"
-	@echo "... Graph.i"
-	@echo "... Graph.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"
+	@echo "... test/allTests.o"
+	@echo "... test/allTests.i"
+	@echo "... test/allTests.s"
 .PHONY : help
 
 

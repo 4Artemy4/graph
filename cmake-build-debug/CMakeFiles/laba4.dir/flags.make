@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -isystem /home/art/University/PPvIS/laba4/test/googletest/googletest/include -isystem /home/art/University/PPvIS/laba4/test/googletest/googletest 
 

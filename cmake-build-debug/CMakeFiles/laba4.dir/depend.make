@@ -4,12 +4,31 @@
 CMakeFiles/laba4.dir/GUI/MainWindow.cpp.o: ../GUI/MainWindow.cpp
 CMakeFiles/laba4.dir/GUI/MainWindow.cpp.o: ../GUI/MainWindow.h
 
-CMakeFiles/laba4.dir/Graph.cpp.o: ../Graph.cpp
-CMakeFiles/laba4.dir/Graph.cpp.o: ../Graph.h
-
-CMakeFiles/laba4.dir/main.cpp.o: ../Graph.h
 CMakeFiles/laba4.dir/main.cpp.o: ../main.cpp
 
 CMakeFiles/laba4.dir/test.cpp.o: ../test.cpp
 CMakeFiles/laba4.dir/test.cpp.o: ../test.h
+
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/gtest-death-test.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/gtest-matchers.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/gtest-message.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/gtest-param-test.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/gtest-printers.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/gtest-test-part.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/gtest-typed-test.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/gtest.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/gtest_pred_impl.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/gtest_prod.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/internal/custom/gtest-port.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/internal/custom/gtest-printers.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/internal/gtest-filepath.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/internal/gtest-internal.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/internal/gtest-param-util.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/internal/gtest-port-arch.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/internal/gtest-port.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/internal/gtest-string.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/googletest/googletest/include/gtest/internal/gtest-type-util.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../graph/Graph.h
+CMakeFiles/laba4.dir/test/allTests.cpp.o: ../test/allTests.cpp
 

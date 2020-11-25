@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/laba4.dir/GUI/MainWindow.cpp.o"
-  "CMakeFiles/laba4.dir/Graph.cpp.o"
   "CMakeFiles/laba4.dir/main.cpp.o"
   "CMakeFiles/laba4.dir/test.cpp.o"
+  "CMakeFiles/laba4.dir/test/allTests.cpp.o"
   "laba4"
   "laba4.pdb"
 )
