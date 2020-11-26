@@ -65,5 +65,8 @@ private:
 //        std::cout << &i << "\n";
 //    }
 //
+//    auto b = point3d.cbegin();
+//    *b = 7;
+//
 //    return 0;
 //}

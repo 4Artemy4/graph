@@ -11,36 +11,28 @@
 template<typename Types>
 struct tr {
 public:
-    typedef size_t weightType;
     typedef Types arg_type;
     typedef Types &reference;
     typedef Types *pointer;
-    typedef const Types &const_reference;
 };
 
-template<typename T, typename traits = tr<T>>
+template<typename nodeType, typename edgeType, typename traits = tr<nodeType>>
 class Graph {
 private:
 
-    std::vector<T> vertex;
-    std::vector<std::vector<typename tr<T>::weightType>> matrix;
+    std::vector<nodeType> vertex;
+    std::vector<std::vector<edgeType>> matrix;
 
-    class VertexIterator : public std::iterator<std::input_iterator_tag, T> {
+    class VertexIterator : public std::iterator<std::input_iterator_tag, nodeType> {
 
     protected:
-        friend class Graph<T>;
+        friend class Graph<nodeType, edgeType>;
 
-        std::vector<T> *currentNode;
-        const std::vector<T> *constCurrentNode;
+        std::vector<nodeType> *currentNode;
         size_t index = 0;
 
-        VertexIterator(std::vector<T> &node, size_t ind) {
+        VertexIterator(std::vector<nodeType> &node, size_t ind) {
             currentNode = &node;
-            index = ind;
-        }
-
-        VertexIterator(const std::vector<T> &node, size_t ind) {
-            constCurrentNode = &node;
             index = ind;
         }
 
@@ -53,20 +45,8 @@ private:
             return index == other.index;
         }
 
-        typename tr<T>::reference operator*() {
-            return currentNode->operator[](index);
-        }
-
-        typename tr<T>::pointer operator->() {
-            return currentNode->operator[](index);
-        }
-
-        typename tr<T>::arg_type operator*() const {
-            return *constCurrentNode->operator[](index);
-        }
-
-        typename tr<T>::pointer operator->() const {
-            return constCurrentNode->operator[](index);
+        virtual typename tr<nodeType>::reference operator*() {
+            return currentNode->at(index);
         }
 
         virtual VertexIterator &operator++() {
@@ -80,27 +60,81 @@ private:
         };
     };
 
-    class EdgesIterator : public std::iterator<std::input_iterator_tag, T> {
+    class ConstVertexIterator : public std::iterator<std::input_iterator_tag, nodeType> {
     protected:
-        friend class Graph<T>;
+        friend class Graph<nodeType, edgeType>;
+
+        std::vector<nodeType> *currentNode;
+        size_t index = 0;
+
+        ConstVertexIterator(std::vector<nodeType> &node, size_t ind) {
+            currentNode = &node;
+            index = ind;
+        }
+
+    public:
+        bool operator!=(ConstVertexIterator const &other) const {
+            return index != other.index;
+        };
+
+        bool operator==(ConstVertexIterator const &other) const {
+            return index == other.index;
+        }
+
+        nodeType operator*() {
+            return currentNode->at(index);
+        }
+
+        virtual ConstVertexIterator &operator++() {
+            index++;
+            return *this;
+        }
+
+        virtual ConstVertexIterator &operator--() {
+            index--;
+            return *this;
+        };
+
+    };
+
+    class ReverseVertexIterator : public VertexIterator {
+    public:
+        ReverseVertexIterator(std::vector<nodeType> &node, size_t ind) : VertexIterator(node, ind) {}
+
+        ReverseVertexIterator &operator++() override {
+            VertexIterator::index--;
+            return *this;
+        };
+
+        ReverseVertexIterator &operator--() override {
+            VertexIterator::index++;
+            return *this;
+        }
+    };
+
+    class EdgesIterator : public std::iterator<std::input_iterator_tag, nodeType> {
+    protected:
+        friend class Graph<nodeType, edgeType>;
 
         struct Triple {
-            typename tr<T>::weightType *weight;
+            edgeType *weight;
             VertexIterator *first;
             VertexIterator *second;
 
-            constexpr Triple(VertexIterator &first, VertexIterator &second, const typename tr<T>::weightType weight)
+            constexpr Triple(VertexIterator &first, VertexIterator &second, edgeType &weight)
                     : first(&first),
                       second(&second),
                       weight(&weight) {};
         };
 
+        Triple *triple;
         VertexIterator *firstIndex;
         VertexIterator *secondIndex;
-        std::vector<std::vector<typename tr<T>::weightType>> *matrix;
-        std::vector<T> *vertex;
+        std::vector<std::vector<edgeType>> *matrix;
+        std::vector<nodeType> *vertex;
 
-        EdgesIterator(size_t index1, size_t index2, std::vector<std::vector<typename tr<T>::weightType>> &matrix, std::vector<T> &vertex) {
+        EdgesIterator(size_t index1, size_t index2, std::vector<std::vector<edgeType>> &matrix,
+                      std::vector<nodeType> &vertex) {
             this->matrix = &matrix;
             this->vertex = &vertex;
             firstIndex = new VertexIterator(*this->vertex, index1);
@@ -138,16 +172,64 @@ private:
         }
     };
 
-    class ReverseVertexIterator : public VertexIterator {
-        ReverseVertexIterator &operator++() override {
-            VertexIterator::index++;
+
+    class ConstEdgesIterator : public std::iterator<std::input_iterator_tag, nodeType> {
+    protected:
+        friend class Graph<nodeType, edgeType>;
+
+        struct Triple {
+            edgeType *weight;
+            VertexIterator *first;
+            VertexIterator *second;
+
+            constexpr Triple(VertexIterator &first, VertexIterator &second, edgeType &weight)
+                    : first(&first),
+                      second(&second),
+                      weight(&weight) {};
+        };
+
+        VertexIterator *firstIndex;
+        VertexIterator *secondIndex;
+        std::vector<std::vector<edgeType>> *matrix;
+        std::vector<nodeType> *vertex;
+
+        ConstEdgesIterator(size_t index1, size_t index2, std::vector<std::vector<edgeType>> &matrix,
+                      std::vector<nodeType> &vertex) {
+            this->matrix = &matrix;
+            this->vertex = &vertex;
+            firstIndex = new VertexIterator(*this->vertex, index1);
+            secondIndex = new VertexIterator(*this->vertex, index2);
+        }
+
+    public:
+
+        bool operator==(EdgesIterator const &other) const {
+            return firstIndex == other.firstIndex && secondIndex == other.secondIndex;
+        }
+
+        Triple operator*() const {
+            return Triple(*firstIndex, *secondIndex, matrix->at(firstIndex->index).at(secondIndex->index));
+        }
+
+        bool operator!=(EdgesIterator const &other) const {
+            return firstIndex->index != other.firstIndex->index || secondIndex->index != other.secondIndex->index;
+        }
+
+        virtual EdgesIterator &operator++() {
+            if (firstIndex->index == vertex->size() - 1) {
+                secondIndex->index++;
+                firstIndex->index = 0;
+            } else firstIndex->index++;
             return *this;
         }
 
-        ReverseVertexIterator &operator--() override {
-            VertexIterator::index--;
+        virtual EdgesIterator &operator--() {
+            if (firstIndex->index == 0) {
+                secondIndex->index--;
+                firstIndex->index = vertex->size() - 1;
+            } else firstIndex->index--;
             return *this;
-        };
+        }
     };
 
     class ReverseEdgesIterator : public EdgesIterator {
@@ -170,7 +252,7 @@ private:
 
 public:
     typedef VertexIterator vertexIterator;
-    typedef VertexIterator constVertexIterator;
+    typedef ConstVertexIterator constVertexIterator;
     typedef ReverseVertexIterator reverseVertexIterator;
 
     typedef EdgesIterator edgesIterator;
@@ -187,6 +269,33 @@ public:
         vertex.resize(size);
     };
 
+    Graph(const Graph &other) {
+        matrix = other.matrix;
+        vertex = other.vertex;
+    }
+
+    Graph &operator=(const Graph &other) {
+        vertex = other.vertex;
+        matrix = other.matrix;
+        return *this;
+    }
+
+    bool operator==(const Graph &other) {
+        return matrix == other.matrix && vertex == other.vertex;
+    }
+
+    bool operator!=(const Graph &other) {
+        return !(*this == other);
+    }
+
+    friend std::ostream &operator<<(std::ostream &os, Graph &graph){
+        for (auto i = graph.beginE(); i != graph.endE(); ++i) {
+            os << *(*(*i).first) << "   " << *(*(*i).second) << "   " << *((*i).weight) << '\n';
+        }
+        std::cout << *(*(*graph.endE()).first) << "   " << *(*(*graph.endE()).second) << "   " << *((*graph.endE()).weight) << '\n';
+        return os;
+    }
+
     size_t getVertexCount() const { return vertex.size(); }
 
     size_t getEdgesCount() const {
@@ -199,7 +308,7 @@ public:
         return result;
     };
 
-    void addVertex(T data) {
+    void addVertex(nodeType data) {
         vertex.push_back(data);
         for (auto &i : matrix) {
             i.push_back(0);
@@ -223,19 +332,15 @@ public:
     };
 
     void removeVertex(const size_t index) {
-        vertex.erase(vertex.begin(), vertex.begin() + index);
-        matrix.erase(matrix.begin(), matrix.begin() + index);
-        for (int i = 0; i < vertex.size(); ++i) {
-            matrix.at(index).erase(matrix[i].begin(), matrix[i].begin() + index);
+        vertex.erase(vertex.begin() + index);
+        matrix.erase(matrix.begin() + index);
+        for (auto &i: matrix) {
+            i.erase(i.begin() + index);
         }
     };
 
     void removeVertex(const vertexIterator index) {
-        vertex.erase(vertex.begin(), vertex.begin() + index.index);
-        matrix.erase(matrix.begin(), matrix.begin() + index.index);
-        for (int i = 0; i < vertex.size(); ++i) {
-            matrix.at(index.index).erase(matrix[i].begin(), matrix[i].begin() + index.index);
-        }
+        removeVertex(index.index);
     };
 
     void removeEdge(const size_t index1, const size_t index2) {
@@ -254,6 +359,13 @@ public:
         return result;
     }
 
+    bool empty() const { return vertex.empty(); }
+
+    void clear() {
+        vertex.clear();
+        matrix.clear();
+    }
+
     vertexIterator begin() { return vertexIterator(vertex, 0); }
 
     vertexIterator end() { return vertexIterator(vertex, vertex.size()); }
@@ -262,21 +374,21 @@ public:
 
     vertexIterator endV() { return vertexIterator(vertex, vertex.size() - 1); }
 
-    constVertexIterator cbeginV() const { return constVertexIterator(vertex, 0); }
+    constVertexIterator cbeginV() { return constVertexIterator(vertex, 0); }
 
-    constVertexIterator cendV() const { return constVertexIterator(vertex, vertex.size() - 1); };
+    constVertexIterator cendV() { return constVertexIterator(vertex, vertex.size() - 1); };
 
-    reverseVertexIterator rBeginV() { reverseVertexIterator(vertex, 0); }
+    reverseVertexIterator rBeginV() { return reverseVertexIterator(vertex, 0); }
 
-    reverseVertexIterator rEndV() { reverseVertexIterator(vertex, vertex.size() - 1); }
+    reverseVertexIterator rEndV() { return reverseVertexIterator(vertex, vertex.size() - 1); }
 
     edgesIterator beginE() { return edgesIterator(0, 0, matrix, vertex); }
 
     edgesIterator endE() { return edgesIterator(vertex.size() - 1, vertex.size() - 1, matrix, vertex); }
 
-    constEdgesIterator cbeginE() const { return edgesIterator(0, 0); }
+    constEdgesIterator cbeginE() { return constEdgesIterator(0, 0); }
 
-    constEdgesIterator cendE() const { return edgesIterator(vertex.size(), vertex.size() - 1); };
+    constEdgesIterator cendE() { return constEdgesIterator(vertex.size(), vertex.size() - 1); };
 
     reverseEdgesIterator rbeginE() { return reverseEdgesIterator(0, 0, matrix, vertex); };
 
