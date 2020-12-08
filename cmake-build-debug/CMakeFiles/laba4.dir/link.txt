@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/laba4.dir/main.cpp.o CMakeFiles/laba4.dir/test.cpp.o CMakeFiles/laba4.dir/GUI/MainWindow.cpp.o CMakeFiles/laba4.dir/test/allTests.cpp.o  -o laba4  lib/libgtestd.a lib/libgtest_maind.a lib/libgtestd.a -lpthread 
+/usr/bin/c++  -g   CMakeFiles/laba4.dir/main.cpp.o CMakeFiles/laba4.dir/test/allTests.cpp.o  -o laba4  lib/libgtestd.a lib/libgtest_maind.a /usr/lib/libQt5Widgets.so.5.15.2 lib/libgtestd.a -lpthread /usr/lib/libQt5Gui.so.5.15.2 /usr/lib/libQt5Core.so.5.15.2 

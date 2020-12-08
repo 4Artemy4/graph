@@ -55,19 +55,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/artemy/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.5981.166/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/art/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/202.7660.37/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/artemy/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.5981.166/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/art/University/PPvIS/laba4
+CMAKE_SOURCE_DIR = /home/artemy/University/PPvIS/laba4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/art/University/PPvIS/laba4/cmake-build-debug
+CMAKE_BINARY_DIR = /home/artemy/University/PPvIS/laba4/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -157,14 +157,14 @@ CMakeFiles/laba4.dir/all: test/googletest/googletest/CMakeFiles/gtest_main.dir/a
 CMakeFiles/laba4.dir/all: test/googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/laba4.dir/build.make CMakeFiles/laba4.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/laba4.dir/build.make CMakeFiles/laba4.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=9,10,11,12,13 "Built target laba4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/artemy/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=9,10,11 "Built target laba4"
 .PHONY : CMakeFiles/laba4.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/laba4.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/artemy/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/laba4.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/artemy/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/laba4.dir/rule
 
 # Convenience name for target.
@@ -185,14 +185,14 @@ test/googletest/googlemock/CMakeFiles/gmock_main.dir/all: test/googletest/google
 test/googletest/googlemock/CMakeFiles/gmock_main.dir/all: test/googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f test/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make test/googletest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make test/googletest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/artemy/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target gmock_main"
 .PHONY : test/googletest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
 test/googletest/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/artemy/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/googletest/googlemock/CMakeFiles/gmock_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/artemy/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 0
 .PHONY : test/googletest/googlemock/CMakeFiles/gmock_main.dir/rule
 
 # Convenience name for target.
@@ -212,14 +212,14 @@ test/googletest/googlemock/CMakeFiles/gmock_main.dir/clean:
 test/googletest/googlemock/CMakeFiles/gmock.dir/all: test/googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f test/googletest/googlemock/CMakeFiles/gmock.dir/build.make test/googletest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/googletest/googlemock/CMakeFiles/gmock.dir/build.make test/googletest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/artemy/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target gmock"
 .PHONY : test/googletest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
 test/googletest/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/artemy/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/googletest/googlemock/CMakeFiles/gmock.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/artemy/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 0
 .PHONY : test/googletest/googlemock/CMakeFiles/gmock.dir/rule
 
 # Convenience name for target.
@@ -239,14 +239,14 @@ test/googletest/googlemock/CMakeFiles/gmock.dir/clean:
 test/googletest/googletest/CMakeFiles/gtest_main.dir/all: test/googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f test/googletest/googletest/CMakeFiles/gtest_main.dir/build.make test/googletest/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/googletest/googletest/CMakeFiles/gtest_main.dir/build.make test/googletest/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/artemy/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target gtest_main"
 .PHONY : test/googletest/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
 test/googletest/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/artemy/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/googletest/googletest/CMakeFiles/gtest_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/artemy/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 0
 .PHONY : test/googletest/googletest/CMakeFiles/gtest_main.dir/rule
 
 # Convenience name for target.
@@ -266,14 +266,14 @@ test/googletest/googletest/CMakeFiles/gtest_main.dir/clean:
 test/googletest/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f test/googletest/googletest/CMakeFiles/gtest.dir/build.make test/googletest/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/googletest/googletest/CMakeFiles/gtest.dir/build.make test/googletest/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/artemy/University/PPvIS/laba4/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target gtest"
 .PHONY : test/googletest/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
 test/googletest/googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/artemy/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/googletest/googletest/CMakeFiles/gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/art/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/artemy/University/PPvIS/laba4/cmake-build-debug/CMakeFiles 0
 .PHONY : test/googletest/googletest/CMakeFiles/gtest.dir/rule
 
 # Convenience name for target.
